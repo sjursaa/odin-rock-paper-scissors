@@ -16,6 +16,9 @@ function getHumanChoice() {
   console.log("You: " + choice);
 }
 
+var humanScore = 0;
+var computerScore = 0;
+
 getHumanChoice();
 var one = getComputerChoice();
 console.log("Computer: " + one);
