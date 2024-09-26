@@ -13,8 +13,8 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   var choice = prompt();
-  console.log("You: " + choice);
-  return choice;
+  console.log("You: " + choice.toLowerCase());
+  return choice.toLowerCase();
 }
 
 function playRound(humanChoice, computerChoice) {
