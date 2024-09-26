@@ -11,5 +11,11 @@ function getComputerChoice() {
   }
 }
 
+function getHumanChoice() {
+  var choice = prompt();
+  console.log("You: " + choice);
+}
+
+getHumanChoice();
 var one = getComputerChoice();
-console.log(one);
+console.log("Computer: " + one);
