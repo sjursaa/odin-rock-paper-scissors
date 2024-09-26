@@ -48,21 +48,40 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-var humanScore = 0;
-var computerScore = 0;
+function playGame() {
+  var humanScore = 0;
+  var computerScore = 0;
+  var rounds = 0;
 
-var humanChoice = getHumanChoice();
-var computerChoice = getComputerChoice();
-console.log("Computer: " + computerChoice);
+  while (rounds < 5) {
+    var humanChoice = getHumanChoice();
+    var computerChoice = getComputerChoice();
+    console.log("Computer: " + computerChoice);
 
-var result = playRound(humanChoice, computerChoice);
-console.log(result);
-if (result == 1) {
-  humanScore += 1;
+    var result = playRound(humanChoice, computerChoice);
+    console.log(result);
+
+    if (result == 1) {
+      humanScore += 1;
+    }
+    if (result == -1) {
+      computerScore += 1;
+    }
+    rounds += 1;
+
+    console.log("You: " + humanScore);
+    console.log("Computer " + computerScore);
+  }
+
+  if (humanScore > computerScore) {
+    console.log("You've won, gz!");
+  }
+  if (computerScore > humanScore) {
+    console.log("u suck");
+  }
+  if (computerScore == humanScore) {
+    console.log("tied! try again");
+  }
 }
-if (result == -1) {
-  computerScore += 1;
-}
 
-console.log("You: " + humanScore);
-console.log("Computer " + computerScore);
+playGame();
