@@ -1,7 +1,3 @@
-console.log("Hello World, from external script");
-
-console.log("Hello");
-
 function getComputerChoice() {
   var randomVal = Math.random();
   if (randomVal < 0.33) {
