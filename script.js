@@ -1,5 +1,5 @@
 function getComputerChoice() {
-  var randomVal = Math.random();
+  let randomVal = Math.random();
   if (randomVal < 0.33) {
     return "paper";
   }
@@ -12,7 +12,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  var choice = prompt();
+  let choice = prompt();
   console.log("You: " + choice.toLowerCase());
   return choice.toLowerCase();
 }
@@ -49,16 +49,16 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-  var humanScore = 0;
-  var computerScore = 0;
-  var rounds = 0;
+  let humanScore = 0;
+  let computerScore = 0;
+  let rounds = 0;
 
   while (rounds < 5) {
-    var humanChoice = getHumanChoice();
-    var computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
     console.log("Computer: " + computerChoice);
 
-    var result = playRound(humanChoice, computerChoice);
+    let result = playRound(humanChoice, computerChoice);
     console.log(result);
 
     if (result == 1) {
