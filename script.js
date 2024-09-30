@@ -92,5 +92,16 @@ const scissorsButton = document.querySelector("#scissorsButton");
 
 //rockButton.onclick = () => alert("hello world");
 rockButton.addEventListener("click", () => {
-  alert("helloWrold");
+  alert("rock");
+  playRound("rock", getComputerChoice());
+});
+
+paperButton.addEventListener("click", () => {
+  alert("paper");
+  playRound("paper", getComputerChoice());
+});
+
+scissorsButton.addEventListener("click", () => {
+  alert("scissors");
+  playRound("scissors", getComputerChoice());
 });
