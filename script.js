@@ -86,19 +86,21 @@ function playGame() {
 
 //playGame();
 const displayResults = document.querySelector(".displayResults");
-displayResults.innerText("Please select an option to start game");
+console.dir(displayResults.firstElementChild);
+displayResults.textContent = "Hellow";
 
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
 
-//rockButton.onclick = () => alert("hello world");
 rockButton.addEventListener("click", () => {
-  alert(playRound("rock", getComputerChoice()));
+  let result = playRound("rock", getComputerChoice());
+  displayResults.TextContent = result.toString();
 });
 
 paperButton.addEventListener("click", () => {
-  alert(playRound("paper", getComputerChoice()));
+  let result = playRound("paper", getComputerChoice());
+  displayResults.TextContent = result;
 });
 
 scissorsButton.addEventListener("click", () => {
