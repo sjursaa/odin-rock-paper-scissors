@@ -85,24 +85,45 @@ function playGame() {
 }
 
 //playGame();
+const displayComputer = document.querySelector(".displayComputer");
 const displayResults = document.querySelector(".displayResults");
-console.dir(displayResults.firstElementChild);
-displayResults.textContent = "Hellow";
-
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
 
+let humanScore = 0;
+let computerScore = 0;
+let rounds = 0;
+
 rockButton.addEventListener("click", () => {
-  let result = playRound("rock", getComputerChoice());
-  displayResults.TextContent = result.toString();
+  let playerChoice = "rock";
+  let computerChoice = getComputerChoice();
+  let result = playRound(playerChoice, computerChoice);
+  if (result == "win") {
+    humanScore++;
+  }
+  if (result == "lose") {
+    computerScore++;
+  }
+  displayResults.textContent =
+    "You " +
+    result +
+    "! Your score: " +
+    humanScore +
+    " Computer score: " +
+    computerScore;
+  displayComputer.textContent =
+    "You: " + playerChoice + ", Computer: " + computerChoice;
 });
 
 paperButton.addEventListener("click", () => {
+  let playerChoice = "paper";
   let result = playRound("paper", getComputerChoice());
-  displayResults.TextContent = result;
+  displayResults.textContent = result;
 });
 
 scissorsButton.addEventListener("click", () => {
-  alert(playRound("scissors", getComputerChoice()));
+  let playerChoice = "scissors";
+  let result = playRound("scissors", getComputerChoice());
+  displayResults.textContent = result;
 });
