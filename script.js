@@ -95,6 +95,7 @@ let humanScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
+// TODO: refactor into playRound-function
 rockButton.addEventListener("click", () => {
   let playerChoice = "rock";
   let computerChoice = getComputerChoice();
