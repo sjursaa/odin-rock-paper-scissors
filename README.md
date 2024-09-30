@@ -19,3 +19,8 @@ TODO: add buttons for rock paper scissors (x3) // DOM/html??
 TODO: add event listener to button that plays a round with that selection.
 TODO: add div for displaying results, convert console.log to DOM methods
 TODO: Display score & announce winner in said div
+TODO: Merge these changes into main
+
+# Notes
+
+JS script must be loaded after buttons are created in the index.html file. In order for event handlers to work properly.
