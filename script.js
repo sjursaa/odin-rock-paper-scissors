@@ -85,7 +85,9 @@ function playGame() {
 }
 
 //playGame();
-//
+const displayResults = document.querySelector(".displayResults");
+displayResults.innerText("Please select an option to start game");
+
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
