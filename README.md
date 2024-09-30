@@ -20,3 +20,4 @@ TODO: Merge these changes into main
 # Notes
 
 JS script must be loaded after buttons are created in the index.html file. In order for event handlers to work properly.
+There probably is a way to do this in the script in the head tag.
