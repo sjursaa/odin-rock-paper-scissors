@@ -56,7 +56,7 @@ function playGame() {
   while (rounds < 5) {
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
-    console.log("Computer: " + computerChoice);
+    displayComputer.textContent("Computer: " + computerChoice);
 
     let result = playRound(humanChoice, computerChoice);
     console.log(result);
@@ -69,22 +69,23 @@ function playGame() {
     }
     rounds += 1;
 
-    console.log("You: " + humanScore);
-    console.log("Computer " + computerScore);
+    displayResults.textContent("You: " + humanScore);
+    displayResults.textContent("Computer " + computerScore);
   }
 
   if (humanScore > computerScore) {
-    console.log("You've won, gz!");
+    displayResults.textContent("You've won, gz!");
   }
   if (computerScore > humanScore) {
-    console.log("u suck");
+    displayResults.textContent("u suck");
   }
   if (computerScore == humanScore) {
-    console.log("tied! try again");
+    displayResults.textContent("tied! try again");
   }
 }
 
-//playGame();
+function playGameGui() {}
+
 const displayComputer = document.querySelector(".displayComputer");
 const displayResults = document.querySelector(".displayResults");
 const rockButton = document.querySelector("#rockButton");
@@ -95,11 +96,15 @@ let humanScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
-// TODO: refactor into playRound-function
+//playGame();
+
+// TODO: Refactor to get duplicate code out of eventListeners
 rockButton.addEventListener("click", () => {
   let playerChoice = "rock";
   let computerChoice = getComputerChoice();
   let result = playRound(playerChoice, computerChoice);
+  displayComputer.textContent =
+    "You: " + playerChoice + ", Computer: " + computerChoice;
   if (result == "win") {
     humanScore++;
   }
@@ -119,12 +124,46 @@ rockButton.addEventListener("click", () => {
 
 paperButton.addEventListener("click", () => {
   let playerChoice = "paper";
-  let result = playRound("paper", getComputerChoice());
-  displayResults.textContent = result;
+  let computerChoice = getComputerChoice();
+  let result = playRound(playerChoice, computerChoice);
+  displayComputer.textContent =
+    "You: " + playerChoice + ", Computer: " + computerChoice;
+  if (result == "win") {
+    humanScore++;
+  }
+  if (result == "lose") {
+    computerScore++;
+  }
+  displayResults.textContent =
+    "You " +
+    result +
+    "! Your score: " +
+    humanScore +
+    " Computer score: " +
+    computerScore;
+  displayComputer.textContent =
+    "You: " + playerChoice + ", Computer: " + computerChoice;
 });
 
 scissorsButton.addEventListener("click", () => {
   let playerChoice = "scissors";
-  let result = playRound("scissors", getComputerChoice());
-  displayResults.textContent = result;
+  let computerChoice = getComputerChoice();
+  let result = playRound(playerChoice, computerChoice);
+  displayComputer.textContent =
+    "You: " + playerChoice + ", Computer: " + computerChoice;
+  if (result == "win") {
+    humanScore++;
+  }
+  if (result == "lose") {
+    computerScore++;
+  }
+  displayResults.textContent =
+    "You " +
+    result +
+    "! Your score: " +
+    humanScore +
+    " Computer score: " +
+    computerScore;
+  displayComputer.textContent =
+    "You: " + playerChoice + ", Computer: " + computerChoice;
 });
