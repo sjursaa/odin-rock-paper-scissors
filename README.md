@@ -17,15 +17,15 @@ use keyword defer to load scripts after html!
 
 ```bash
 # branching
-git checkout -b rps-ui
-git push origin rps-ui
-git branch
+git checkout -b rps-ui # create & switch branch
+git push origin rps-ui # create remote branch
+git branch # list branches
 
 # merging
-git status
-git checkout main
+git status # use more often! lists changes that haven't been staged yet
+git checkout main # switch back to main
 git merge rps-ui
-git log
+git log # log change history
 git push origin main
 
 # removing branch post merge
