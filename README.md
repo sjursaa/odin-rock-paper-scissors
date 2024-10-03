@@ -29,6 +29,6 @@ git log # log change history
 git push origin main
 
 # removing branch post merge
-git branch -d rps-ui
-git push origin --delete rps-ui
+git branch -d rps-ui # local
+git push origin --delete rps-ui # remote
 ```
