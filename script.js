@@ -92,6 +92,9 @@ const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
 
+// placeholder text to prevent buttons from moving when round one is played
+displayComputer.textContent = "choices are displayed here";
+
 let humanScore = 0;
 let computerScore = 0;
 let rounds = 0;
