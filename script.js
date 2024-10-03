@@ -101,6 +101,20 @@ let rounds = 0;
 
 //playGame();
 
+function checkScore() {
+  if (humanScore >= 5) {
+    displayResults.textContent = "You win! press a button to play again";
+    humanScore = 0;
+    computerScore = 0;
+  }
+  if (computerScore >= 5) {
+    displayResults.textContent =
+      "You loose! Press a button to play another game!";
+    humanScore = 0;
+    computerScore = 0;
+  }
+}
+
 // TODO: Refactor to get duplicate code out of eventListeners
 rockButton.addEventListener("click", () => {
   let playerChoice = "rock";
@@ -123,6 +137,7 @@ rockButton.addEventListener("click", () => {
     computerScore;
   displayComputer.textContent =
     "You: " + playerChoice + ", Computer: " + computerChoice;
+  checkScore();
 });
 
 paperButton.addEventListener("click", () => {
@@ -146,6 +161,7 @@ paperButton.addEventListener("click", () => {
     computerScore;
   displayComputer.textContent =
     "You: " + playerChoice + ", Computer: " + computerChoice;
+  checkScore();
 });
 
 scissorsButton.addEventListener("click", () => {
@@ -169,4 +185,5 @@ scissorsButton.addEventListener("click", () => {
     computerScore;
   displayComputer.textContent =
     "You: " + playerChoice + ", Computer: " + computerChoice;
+  checkScore();
 });
