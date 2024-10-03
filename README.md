@@ -2,10 +2,6 @@
 
 odin-project
 
-# TODOs
-
-TODO: change while loop to for loop in playGame()
-
 # Notes
 
 JS script must be loaded after buttons are created in the index.html file. In order for event handlers to work properly.
